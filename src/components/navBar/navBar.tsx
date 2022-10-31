@@ -1,4 +1,5 @@
 import "./navBar.css";
+import GoogleMapReact from "google-map-react";
 
 const NavBar = () => {
   return (

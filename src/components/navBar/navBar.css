@@ -1,5 +1,5 @@
 .navBar {
-    background-color: blue;
+    background-color: #2956E7;
     display: flex;
     gap: 21px;
     padding: 1rem 2rem;
@@ -25,4 +25,8 @@ img.searchIcon {
     position: absolute;
     top: 9px;
     left: 15px;
+}
+
+.logo {
+    margin-top: 10px;
 }
