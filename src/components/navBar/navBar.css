@@ -1,0 +1,28 @@
+.navBar {
+    background-color: blue;
+    display: flex;
+    gap: 21px;
+    padding: 1rem 2rem;
+}
+
+input.searchBar {
+    padding: 10px 10px 10px 48px;
+    border-radius: 22.14px;
+    outline: none;
+    border: none;
+    width: 20rem;
+    font-size: 19px;
+    letter-spacing: 0;
+    line-height: 23px;
+    color: #0000006e;
+}
+
+.inputSearch {
+    position: relative;
+}
+
+img.searchIcon {
+    position: absolute;
+    top: 9px;
+    left: 15px;
+}
