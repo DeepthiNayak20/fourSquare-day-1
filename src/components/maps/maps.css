@@ -1,7 +1,38 @@
+.mapsDisplay {
+    /* display: none; */
+    width: 0;
+    z-index: 2;
+
+}
+
 .mapsDisplay>div {
     position: absolute !important;
     top: 75px;
     left: 0;
     right: 0;
     bottom: 0;
+    /* display: flex;
+    align-items: center;
+    justify-content: flex-start; */
+
+}
+
+.pin {
+    border: 1px solid #889F0E;
+    background-color: #C4DE36;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    height: 30px;
+    /* padding: 0.5rem 1rem; */
+    width: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pin:hover {
+    border: 1px solid #830010;
+    background-color: #D0021B;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
 }

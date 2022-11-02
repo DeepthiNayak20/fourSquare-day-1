@@ -13,9 +13,13 @@ const Maps = () => {
         }}
       >
         <div lat={13.3409} lng={74.7421}>
-          <h1>hiiiiii</h1>
+          <div className="pin">1</div>
         </div>
       </GoogleMapReact>
+
+      {/* <div>
+        <SearchElements />
+      </div> */}
     </div>
   );
 };
