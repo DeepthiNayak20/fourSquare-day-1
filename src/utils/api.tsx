@@ -1,23 +1,28 @@
 import { useEffect, useState } from "react";
 
-const Api = () => {
+const Api = (place: any) => {
   const [data, setData] = useState([]);
+  console.log("x", place && place.results && place.results[0].location.lng);
 
   useEffect(() => {
     fetch(
-      `https://developers.zomato.com/api/v2.1/geocode?lat=13.3409&lon=74.7421`,
+      `https://developers.zomato.com/api/v2.1/geocode?lat=${
+        place && place.results && place.results[0].location.lat
+      }&lon=${place && place.results && place.results[0].location.lng}`,
       {
         headers: {
           Accept: "application/json",
-          "user-key": "5ffb698e3d9a8ea8d51fb8847c216058",
+          "user-key": "c470e80941290e8b35355d10dcfb3e36",
         },
       }
     )
       .then((response) => response.json())
       .then((data) => setData(data));
-  }, []);
+  }, [place]);
 
   return data;
 };
 
 export default Api;
+
+

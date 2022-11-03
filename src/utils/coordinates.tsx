@@ -22,7 +22,7 @@ const Coordinates = (props: any) => {
       .then((res) => res.json())
       .then((json) => setLocataion(json))
       .catch((err) => console.error("error:" + err));
-  }, [props.search]);
+  }, [props]);
   return location;
 };
 

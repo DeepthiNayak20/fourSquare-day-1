@@ -48,14 +48,22 @@ const HotelDetails = () => {
                     Near Mandavi Paradise Manipal 576107 Karnataka
                   </div>
                 </div>
-                <div className="hours"></div>
-                <div className="catagory"></div>
+                <div className="hours">
+                  <div className="hoursBold">HOURS</div>
+                  <div className="timing">09.00 AM to 10.00PM</div>
+                </div>
+                <div className="catagory">
+                  <div className="categoryHead">CATEGORY</div>
+                  <div className="categoryTail">
+                    Sandwich Place, Burger Joint, Burrito Place
+                  </div>
+                </div>
               </div>
               <div className="hotelMap">
                 <iframe src="https://maps.google.com/maps?q=13.3409,74.7421&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
               </div>
             </div>
-            <div className="hotelReviews">4</div>
+            <div className="hotelReviews">Reviews</div>
           </div>
         </div>
       </div>

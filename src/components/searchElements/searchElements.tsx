@@ -5,8 +5,12 @@ import Coordinates from "../../utils/coordinates";
 import { useNavigate } from "react-router-dom";
 
 const SearchElements = (props: any) => {
+  let search = props.search;
   const [first, setfirst] = useState<any>([]);
-  const restaurant = Api();
+  console.log(Coordinates(search));
+  const coords = Coordinates(search);
+  const restaurant = Api(coords);
+  console.log("restaurant", restaurant);
 
   useEffect(() => {
     setfirst(restaurant);
@@ -27,9 +31,8 @@ const SearchElements = (props: any) => {
   const nearBy = first && first.nearby_restaurants;
   console.log(nearBy);
 
-  let search = props.search;
-  console.log(Coordinates(search));
-
+  Coordinates(search);
+  props.restData(nearBy);
   return (
     <div className="searchItem">
       {props.focus && (

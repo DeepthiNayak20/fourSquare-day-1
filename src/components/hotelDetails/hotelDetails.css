@@ -42,5 +42,69 @@
     letter-spacing: 0;
     line-height: 22px;
     margin-bottom: 0.5rem;
+}
 
+.infoTitleBody {
+    color: #9B9B9B;
+    font-family: Helvetica;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 14px;
+    padding-bottom: 0.5rem;
+}
+
+.infoAddress {
+    color: #4F585D;
+    font-family: Helvetica;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 17px;
+}
+
+.info {
+    border-bottom: 1px solid #d8d8d86b;
+    padding-bottom: 1rem;
+}
+
+.hoursBold {
+    color: #9B9B9B;
+    font-family: Helvetica;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 14px;
+}
+
+.timing {
+    color: #4F585D;
+    font-family: Helvetica;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 17px;
+    margin-top: 0.5rem;
+}
+
+.hours {
+    border-bottom: 1px solid #d8d8d86b;
+    padding: 1rem 0rem;
+}
+
+.categoryHead {
+    color: #9B9B9B;
+    font-family: Helvetica;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 14px;
+}
+
+.categoryTail {
+    color: #4F585D;
+    font-family: Helvetica;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 17px;
+    margin-top: 0.5rem;
+}
+
+.catagory {
+    padding: 1rem 0rem 0rem 0rem;
 }
