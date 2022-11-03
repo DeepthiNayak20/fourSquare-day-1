@@ -1,0 +1,46 @@
+.hotelContainer {
+    background-color: #D8D8D8;
+}
+
+.detailsMargin {
+    background-color: white;
+    margin: 0rem 12%;
+}
+
+.hotelImages {
+    display: flex;
+    gap: 9px;
+    overflow: auto;
+}
+
+.images img {
+    height: 200px;
+    width: 200px;
+}
+
+.hotelName {
+    border-bottom: 1px solid #d8d8d86b;
+}
+
+.hotelInfo {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0rem;
+    border-bottom: 1px solid #d8d8d86b;
+}
+
+.hotelCompleteInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.infoTitle {
+    color: #0076FF;
+    font-family: Helvetica;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin-bottom: 0.5rem;
+
+}

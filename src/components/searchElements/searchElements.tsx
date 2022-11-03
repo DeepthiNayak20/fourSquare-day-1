@@ -2,6 +2,7 @@ import Api from "../../utils/api";
 import { useEffect, useState } from "react";
 import "./searchElements.css";
 import Coordinates from "../../utils/coordinates";
+import { useNavigate } from "react-router-dom";
 
 const SearchElements = (props: any) => {
   const [first, setfirst] = useState<any>([]);
@@ -11,6 +12,8 @@ const SearchElements = (props: any) => {
     setfirst(restaurant);
   }, [restaurant]);
 
+  const navigate = useNavigate();
+
   //   console.log(
   //     "data",
   //     first &&
@@ -18,7 +21,11 @@ const SearchElements = (props: any) => {
   //       first.nearby_restaurants[1].restaurant.name
   //   );
 
+  const hotelView = () => {
+    navigate("/hotel");
+  };
   const nearBy = first && first.nearby_restaurants;
+  console.log(nearBy);
 
   let search = props.search;
   console.log(Coordinates(search));
@@ -39,7 +46,7 @@ const SearchElements = (props: any) => {
               .map((user: any, i: any) => {
                 return (
                   <div key={i}>
-                    <div className="searchContainer">
+                    <div className="searchContainer" onClick={hotelView}>
                       <div className="searchImg">
                         <img
                           src={user.restaurant.thumb}
@@ -59,7 +66,9 @@ const SearchElements = (props: any) => {
                             {user.restaurant.location.locality_verbose}
                           </div>
                         </div>
-                        <div className="rating">9.4</div>
+                        <div className="rating">
+                          {user.restaurant.user_rating.aggregate_rating}
+                        </div>
                       </div>
                     </div>
                   </div>
