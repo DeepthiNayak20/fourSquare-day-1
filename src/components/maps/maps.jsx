@@ -1,8 +1,9 @@
 import GoogleMapReact from "google-map-react";
 import "./maps.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Maps = (props) => {
+  const [index, setIndex] = useState(0);
   // console.log(
   //   "data",
   //   props &&
@@ -21,7 +22,7 @@ const Maps = (props) => {
       props.nearBy[0] &&
       props.nearBy[0].restaurant.location.longitude,
   };
-
+  props.index(index);
   // useEffect(() => {
   //   console.log(
   //     "place",
@@ -47,7 +48,14 @@ const Maps = (props) => {
                 lat={place.restaurant.location.latitude}
                 lng={place.restaurant.location.longitude}
               >
-                <div className="pin">{i + 1}</div>
+                <div
+                  className="pin"
+                  onClick={() => {
+                    setIndex(i);
+                  }}
+                >
+                  {i + 1}
+                </div>
               </div>
             );
           })}

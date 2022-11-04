@@ -10,17 +10,18 @@ const SearchElements = (props: any) => {
   let search = props.search;
   const [first, setfirst] = useState<any>([]);
   const [display, setDisplay] = useState<any>(false);
+  const [mark, setmark] = useState<any>({});
   //console.log(Coordinates(search));
   const coords = Coordinates(search);
   const restaurant = Api(coords);
-  // console.log("restaurant", restaurant);
+  console.log("mark", props.data);
 
   useEffect(() => {
     setfirst(restaurant);
   }, [restaurant]);
 
   props.location(coords);
-
+  props.path(currentPath);
   const navigate = useNavigate();
 
   //   console.log(
@@ -38,6 +39,21 @@ const SearchElements = (props: any) => {
 
   Coordinates(search);
   props.restData(nearBy);
+  useEffect(() => {
+    props && props.data && setmark(props.data);
+  }, [props.data]);
+  useEffect(() => {
+    pinData();
+  }, [mark]);
+
+  const pinData = () => {
+    if (JSON.stringify(mark) === "undefined" || "{}") {
+      setDisplay(true);
+    } else {
+      setDisplay(false);
+    }
+  };
+
   return (
     <div className="searchItem">
       {!display ? (
@@ -68,7 +84,9 @@ const SearchElements = (props: any) => {
                         >
                           <div className="searchImg">
                             <img
-                              src={user.restaurant.thumb}
+                              src={
+                                user && user.restaurant && user.restaurant.thumb
+                              }
                               alt="deepthi"
                               className="searchPic"
                             />
@@ -76,7 +94,8 @@ const SearchElements = (props: any) => {
                           <div className="textContainer">
                             <div className="text">
                               <div className="textHead">
-                                {i + 1}.&nbsp;{user.restaurant.name}
+                                {i + 1}.&nbsp;
+                                {user.restaurant && user.restaurant.name}
                               </div>
                               <div className="textBody">
                                 {user.restaurant.cuisines}
