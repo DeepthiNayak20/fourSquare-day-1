@@ -14,14 +14,14 @@ function App() {
     setSearch(search);
   };
 
-  console.log("search", search);
+  //console.log("search", search);
 
   return (
     <div className="App">
       <NavBar searchFocus={searchFocus} />{" "}
       <Routes>
         <Route path="/" element={<HomePage focus={focus} search={search} />} />
-        <Route path="/hotel" element={<HotelDetails />} />
+        {/* <Route path="hotel" element={<HotelDetails />} /> */}
       </Routes>
     </div>
   );

@@ -7,9 +7,14 @@ import "./homePage.css";
 
 const HomePage = (props: any) => {
   const [data, setData] = useState([]);
+  const [place, setPlace] = useState([]);
 
   const restData = (nearBy: any) => {
     setData(nearBy);
+  };
+
+  const location = (data: any) => {
+    setPlace(data);
   };
   return (
     <div className="homeContainer">
@@ -17,9 +22,10 @@ const HomePage = (props: any) => {
         focus={props.focus}
         search={props.search}
         restData={restData}
+        location={location}
       />
 
-      <Maps nearBy={data} />
+      <Maps nearBy={data} place={place} />
     </div>
   );
 };

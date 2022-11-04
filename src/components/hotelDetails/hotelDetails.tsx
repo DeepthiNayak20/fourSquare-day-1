@@ -3,7 +3,10 @@ import "../searchElements/searchElements.css";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import { Carousel } from "react-responsive-carousel";
 
-const HotelDetails = () => {
+const HotelDetails = (props: any) => {
+  const detailedData = props.current;
+  console.log("detailedData", detailedData);
+
   return (
     <div>
       <div className="hotelContainer">
@@ -32,11 +35,18 @@ const HotelDetails = () => {
             <div className="hotelName">
               <div className="textContainer">
                 <div className="text">
-                  <div className="textHead">deepthi</div>
-                  <div className="textBody">mangalore</div>
-                  <div className="textTail">ananya</div>
+                  <div className="textHead">{detailedData.restaurant.name}</div>
+                  <div className="textBody">
+                    {detailedData.restaurant.cuisines}
+                  </div>
+                  <div className="textTail">
+                    {" "}
+                    {detailedData.restaurant.location.locality_verbose}
+                  </div>
                 </div>
-                <div className="rating">9.4</div>
+                <div className="rating">
+                  {detailedData.restaurant.user_rating.aggregate_rating}
+                </div>
               </div>
             </div>
             <div className="hotelInfo">
@@ -45,7 +55,7 @@ const HotelDetails = () => {
                   <div className="infoTitle">Info</div>
                   <div className="infoTitleBody">ADDRESS</div>
                   <div className="infoAddress">
-                    Near Mandavi Paradise Manipal 576107 Karnataka
+                    {detailedData.restaurant.location.address}
                   </div>
                 </div>
                 <div className="hours">
@@ -55,12 +65,14 @@ const HotelDetails = () => {
                 <div className="catagory">
                   <div className="categoryHead">CATEGORY</div>
                   <div className="categoryTail">
-                    Sandwich Place, Burger Joint, Burrito Place
+                    {detailedData.restaurant.cuisines}
                   </div>
                 </div>
               </div>
               <div className="hotelMap">
-                <iframe src="https://maps.google.com/maps?q=13.3409,74.7421&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                <iframe
+                  src={`https://maps.google.com/maps?q=${detailedData.restaurant.location.latitude},${detailedData.restaurant.location.longitude}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+                ></iframe>
               </div>
             </div>
             <div className="hotelReviews">Reviews</div>

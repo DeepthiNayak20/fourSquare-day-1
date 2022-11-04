@@ -1,10 +1,12 @@
 .hotelContainer {
     background-color: #D8D8D8;
+    min-height: calc(100vh - 75px);
 }
 
 .detailsMargin {
     background-color: white;
     margin: 0rem 12%;
+    min-height: calc(100vh - 75px);
 }
 
 .hotelImages {

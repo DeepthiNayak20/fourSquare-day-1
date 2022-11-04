@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const Coordinates = (props: any) => {
   const [location, setLocataion] = useState("");
 
-  console.log("adas", props);
+  //console.log("adas", props);
 
   const url = `https://trueway-geocoding.p.rapidapi.com/Geocode?address=${
     props || "udupi"

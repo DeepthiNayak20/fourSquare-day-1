@@ -12,7 +12,7 @@ const NavBar = (props: any) => {
     e.preventDefault();
     setSearch(e.target.search.value);
   };
-  console.log("search anvbar", search);
+  //console.log("search anvbar", search);
   return (
     <div>
       <div className="navBar">
@@ -34,6 +34,13 @@ const NavBar = (props: any) => {
               setFocus(true);
             }}
           />
+          {/* <button
+            onClick={() => {
+              setFocus(false);
+            }}
+          >
+            close
+          </button> */}
         </form>
       </div>
     </div>

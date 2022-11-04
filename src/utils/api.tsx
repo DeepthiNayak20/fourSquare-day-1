@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const Api = (place: any) => {
   const [data, setData] = useState([]);
-  console.log("x", place && place.results && place.results[0].location.lng);
+  //console.log("x", place && place.results && place.results[0].location.lng);
 
   useEffect(() => {
     fetch(
@@ -24,5 +24,3 @@ const Api = (place: any) => {
 };
 
 export default Api;
-
-

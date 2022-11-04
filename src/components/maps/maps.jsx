@@ -1,23 +1,43 @@
 import GoogleMapReact from "google-map-react";
 import "./maps.css";
+import { useEffect } from "react";
 
 const Maps = (props) => {
-  console.log(
-    "data",
-    props &&
+  // console.log(
+  //   "data",
+  //   props &&
+  //     props.nearBy &&
+  //     props.nearBy[0] &&
+  //     props.nearBy[0].restaurant.location.latitude
+  // );
+
+  const center = {
+    lat:
       props.nearBy &&
       props.nearBy[0] &&
-      props.nearBy[0].restaurant.location.latitude
-  );
+      props.nearBy[0].restaurant.location.latitude,
+    lng:
+      props.nearBy &&
+      props.nearBy[0] &&
+      props.nearBy[0].restaurant.location.longitude,
+  };
+
+  // useEffect(() => {
+  //   console.log(
+  //     "place",
+  //     props.place && props.place.results && props.place.results[0].location
+  //   );
+  // });
+
+  // console.log("place", props.place);
   return (
     <div className="mapsDisplay">
       <GoogleMapReact
-        defaultZoom={16}
+        defaultZoom={14}
         resetBoundsOnResize={true}
-        center={{
-          lat: 13.3409,
-          lng: 74.7421,
-        }}
+        center={
+          props.place && props.place.results && props.place.results[0].location
+        }
       >
         {props &&
           props.nearBy &&
