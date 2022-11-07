@@ -49,14 +49,12 @@ const SearchElements = (props: any) => {
   const pinData = () => {
     if (JSON.stringify(mark) === "undefined" || "{}") {
       setDisplay(true);
-    } else {
-      setDisplay(false);
     }
   };
 
   return (
     <div className="searchItem">
-      {!display ? (
+      {display ? (
         <div>
           {" "}
           {props.focus && (
@@ -79,7 +77,7 @@ const SearchElements = (props: any) => {
                           className="searchContainer"
                           onClick={() => {
                             setCurrentPath(user);
-                            setDisplay(true);
+                            setDisplay(!display);
                           }}
                         >
                           <div className="searchImg">
